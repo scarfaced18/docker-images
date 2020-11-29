@@ -20,8 +20,8 @@ RUN echo "deb http://kali.download/kali kali-last-snapshot main contrib non-free
 	chmod +x /usr/local/bin/adb && \
 	chmod +x /usr/local/bin/apktool && \
 	pip3 install frida-tools objection && \
-	echo 'docker run -it --rm -w="/root" --net=host -v $HOME/.androcker:/root/ scarfaced/androcker:drozer /bin/bash -c "cd /opt/platform-tools/ && ./adb connect $GENY:5555 && ./adb forward tcp:31415 tcp:31415 && drozer console connect"' > /usr/local/bin/drozer && \
-	echo 'docker run -it --rm -w="/root" --net=host -v $HOME/.androcker:/root/ scarfaced/androcker:mobsf /bin/bash -c "cd /opt/platform-tools/ && ./adb connect $GENY:5555 && cd /opt/Mobile-Security-Framework-MobSF && ./start.sh $GENY"' > /usr/local/bin/mobsf && \
+	echo 'docker run -it --rm -w="/root" --net=host -v $AHOME/.androcker:/root/ scarfaced/androcker:drozer /bin/bash -c "cd /opt/platform-tools/ && ./adb connect $GENY:5555 && ./adb forward tcp:31415 tcp:31415 && drozer console connect"' > /usr/local/bin/drozer && \
+	echo 'docker run -it --rm -w="/root" --net=host -v $AHOME/.androcker:/root/ scarfaced/androcker:mobsf /bin/bash -c "cd /opt/platform-tools/ && ./adb connect $GENY:5555 && cd /opt/Mobile-Security-Framework-MobSF && ./start.sh $GENY"' > /usr/local/bin/mobsf && \
 	chmod +x /usr/local/bin/drozer && \
 	chmod +x /usr/local/bin/mobsf && \
 	apt-get autoremove -y && \
